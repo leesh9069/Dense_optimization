@@ -12,15 +12,43 @@ class TestRunner(object):
         model = tf.keras.Sequential([
             tf.keras.layers.Conv2D(filters=3, kernel_size=(3, 3), input_shape=(28, 28, 1)),
             tf.keras.layers.BatchNormalization(),
-            # tf.keras.layers.ReLU(),
+            tf.keras.layers.ReLU(),
             tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
             tf.keras.layers.BatchNormalization(),
-            # tf.keras.layers.ReLU(),
+            tf.keras.layers.ReLU(),
+            tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),
+            tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),
+            tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),
+            tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),tf.keras.layers.Conv2D(filters=10, kernel_size=(3, 3)),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.ReLU(),
 
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(512),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.Dense(256),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
+            tf.keras.layers.BatchNormalization(),
+            tf.keras.layers.Dense(10),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.Dense(10),
         ])
@@ -57,5 +85,3 @@ class TestRunner(object):
 
         assert new_model is not None
         # assert len(new_model.layers) == 6
-
-

@@ -37,7 +37,7 @@ class TestNetwork(object):
                 G.add_edge(p, n)
 
     def test_build_model_again(self):
-        # Building a model:
+        # Building save_image model:
         model = self.build_model()
         for i in range(5):  # Making sure BatchNorm has new values
             model(np.random.uniform(-1, 1, [1, 80, 80, 1]), training=True)
@@ -45,7 +45,7 @@ class TestNetwork(object):
         random_input = np.random.uniform(-1, 1, [1, 80, 80, 1])  # Generating random input for Comparison
         orig_model_outputs = model(random_input, training=False).numpy()  # Saving for later comparison
 
-        # Building a DiGraph out of a Keras Model, manually
+        # Building save_image DiGraph out of save_image Keras Model, manually
         G = nx.DiGraph()
         G.add_node(model.layers[0].name, **{LAYER_KEY_ATTRIBUTE: model.layers[0], "is_input": True})
         G.add_node(model.layers[1].name, **{LAYER_KEY_ATTRIBUTE: model.layers[1]})

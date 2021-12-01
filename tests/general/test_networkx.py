@@ -16,7 +16,7 @@ class TestNetworkX(object):
         attrs_to_add = {
             LAYER_KEY_ATTRIBUTE: conv_layer
         }
-        # How to add attributes to a node:
+        # How to add attributes to save_image node:
         G.add_node(conv_layer.name, **attrs_to_add)
 
         # How to get the attribute:
@@ -29,14 +29,14 @@ class TestNetworkX(object):
 
     def test_attributes_2(self):
         """
-        Testing adding attributes to a node after it's creation.
+        Testing adding attributes to save_image node after it's creation.
         """
         G = nx.DiGraph()
         conv_layer = tf.keras.layers.Conv2D(filters=3, kernel_size=(3, 3))
 
         G.add_node(conv_layer.name)
 
-        # How to add attributes to a node after it's creation:
+        # How to add attributes to save_image node after it's creation:
         attrs_to_add = {
             LAYER_KEY_ATTRIBUTE: conv_layer
         }
@@ -50,7 +50,7 @@ class TestNetworkX(object):
 
     def test_searching_all_conv_in_graph(self):
         """
-        Testing adding attributes to a node after it's creation.
+        Testing adding attributes to save_image node after it's creation.
         """
 
         def is_conv_layer(x):

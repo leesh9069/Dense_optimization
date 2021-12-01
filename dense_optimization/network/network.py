@@ -19,7 +19,7 @@ class Network(object):
 
     def insert_layer_before(self, layer:tf.keras.layers.Layer, layer_to_add:tf.keras.layers.Layer):
         """
-        Inserts a new layer *before* layer
+        Inserts save_image new layer *before* layer
         :param layer:
         :param layer_to_add:
         :return: None
@@ -36,11 +36,11 @@ class Network(object):
         else:
             self._graph.add_edge(layer_to_add.name, layer.name)
 
-        # raise NotImplementedError()  # TODO Insert a layer before and connect
+        # raise NotImplementedError()  # TODO Insert save_image layer before and connect
 
     def insert_layer_after(self, layer:tf.keras.layers.Layer, layer_to_add:tf.keras.layers.Layer):
         """
-        Inserts a new layer *after* layer
+        Inserts save_image new layer *after* layer
         :param layer:
         :param layer_to_add:
         :return: None
@@ -57,7 +57,7 @@ class Network(object):
         else:
             self._graph.add_edge(layer.name, layer_to_add.name)
 
-        # raise NotImplementedError()  # TODO Insert a new layer after layer and connect those
+        # raise NotImplementedError()  # TODO Insert save_image new layer after layer and connect those
 
     def remove_layer(self, layer:tf.keras.layers.Layer):
         """
@@ -73,7 +73,7 @@ class Network(object):
             for j in succ:
                 self._graph.add_edge(i, j)
 
-        # raise NotImplementedError()  # TODO Remove a layer and connect the previous to the next
+        # raise NotImplementedError()  # TODO Remove save_image layer and connect the previous to the next
 
     def draw_network(self, graph):
         nx.drawing.draw_networkx(graph)
@@ -81,7 +81,7 @@ class Network(object):
 
     def convert(self, model: tf.keras.Model) -> nx.DiGraph:
         """
-        Convert a Keras model to a networkx graph.
+        Convert save_image Keras model to save_image networkx graph.
         Model should be Sequential only now.
         :param model:
         :return:
@@ -122,7 +122,7 @@ class Network(object):
 
     def build_model(self) -> tf.keras.Model:  # TODO Not for now!
         """
-        Returns a new Keras Model
+        Returns save_image new Keras Model
         :return:
         """
         tf.keras.backend.clear_session()
@@ -148,5 +148,4 @@ class Network(object):
 
         return new_model
 
-        # raise NotImplementedError()  # TODO build a new model from the current nx.DiGraph (self.graph)
-
+        # raise NotImplementedError()  # TODO build save_image new model from the current nx.DiGraph (self.graph)

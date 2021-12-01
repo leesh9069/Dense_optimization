@@ -10,7 +10,6 @@ class Driver(object):
                  dataset: List,
                  metric_fn: tf.keras.metrics.Metric) -> Dict[str, Any]:
         """
-
         :param model: Compiled model
         :param dataset: Dataset
         :param steps: Number of steps to run evaluation on
